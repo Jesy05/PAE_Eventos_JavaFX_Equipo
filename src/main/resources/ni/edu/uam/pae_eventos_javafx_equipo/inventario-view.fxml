@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ni.edu.uam.pae_eventos_javafx_equipo.InventarioController">
+    <top>
+        <HBox spacing="12.0" alignment="CENTER_LEFT">
+            <padding><Insets top="12.0" right="12.0" bottom="12.0" left="12.0"/></padding>
+            <Button text="Volver" onAction="#volver"/>
+            <Label text="Reto 1 - Inventario de pulperia"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="10.0">
+            <padding><Insets top="6.0" right="12.0" bottom="6.0" left="12.0"/></padding>
+
+            <GridPane hgap="10.0" vgap="8.0">
+                <Label text="Codigo:"      GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="txtCodigo"   GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Nombre:"      GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="txtNombre"   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Precio (C$):" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtPrecio"   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label text="Cantidad:"    GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <TextField fx:id="txtCantidad" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            </GridPane>
+
+            <HBox spacing="10.0">
+                <Button text="Guardar" onAction="#guardarProducto"/>
+                <Button text="Limpiar" onAction="#limpiarFormulario"/>
+            </HBox>
+
+            <Label text="Buscar por codigo o nombre y presione ENTER:"/>
+            <TextField fx:id="txtBuscar" onKeyPressed="#buscarConEnter"/>
+
+            <TableView fx:id="tablaProductos" prefHeight="220.0">
+                <columns>
+                    <TableColumn fx:id="colCodigo"   text="Codigo"   prefWidth="90.0"/>
+                    <TableColumn fx:id="colNombre"   text="Nombre"   prefWidth="200.0"/>
+                    <TableColumn fx:id="colPrecio"   text="Precio"   prefWidth="110.0"/>
+                    <TableColumn fx:id="colCantidad" text="Cantidad" prefWidth="90.0"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    <bottom>
+        <Label fx:id="lblMensaje">
+            <padding><Insets top="8.0" right="12.0" bottom="12.0" left="12.0"/></padding>
+        </Label>
+    </bottom>
+</BorderPane>
