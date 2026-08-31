@@ -44,6 +44,8 @@
 
             <ToolBar>
                 <items>
+                    <Button text="Volver" onAction="#volver"/>
+                    <Separator/>
                     <Button text="Nuevo" onAction="#nuevoProducto"/>
                     <Button text="Guardar" onAction="#guardarCatalogo"/>
                     <Separator/>
